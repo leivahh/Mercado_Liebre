@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head-base.ejs', {title: 'Crear producto'}) %>
+        <link rel="stylesheet" href="/css/product-detail.css" />
+    </head>
+
+    <body>
+        <header><%- include('partials/header.ejs') %></header>
+
+        <main>
+            <h2 class="title">Crear producto</h2>
+
+            <form
+                action="/products"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+                <label for="name">Nombre de producto</label>
+                <input type="text" name="name" />
+                <label for="description">Descripción</label>
+                <input type="text" name="description" />
+                <label for="price">Precio del producto</label>
+                <input type="text" name="price" />
+                <label for="discount">Descuento del producto</label>
+                <input type="text" name="discount" />
+                <label for="image">Foto de producto</label>
+                <input type="file" name="image" />Imagen del producto
+                <label for="category" name="category"></label>
+                <button type="submit" class="submit">Agregar producto</button>
+            </form>
+        </main>
+
+        <footer><%- include("partials/footer.ejs") %></footer>
+    </body>
+</html>

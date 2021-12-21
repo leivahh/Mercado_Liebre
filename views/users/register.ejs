@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/head-base.ejs', {title: "Crea tu cuenta"}) %>
+    </head>
+
+    <body>
+        <header><%- include('partials/header.ejs') %></header>
+
+        <main>
+            <h2 class="title">Crear cuenta</h2>
+            <form
+                class="user-info"
+                action="/auth/register"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+                <label for="name" class="hidden">Nombre y apellido:</label>
+                <p>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Nombre y apellido"
+                    />
+                </p>
+                <label for="user" class="hidden">Nombre de usuario:</label>
+                <p>
+                    <input
+                        type="text"
+                        name="user"
+                        placeholder="Nombre de usuario"
+                    />
+                </p>
+                <label for="email" class="hidden">Email:</label>
+                <p><input type="text" name="email" placeholder="Email" /></p>
+                <label for="birth">Fecha de nacimiento</label>
+                <p><input type="date" /></p>
+                <label for="address" class="hidden">Domicilio</label>
+                <p>
+                    <input type="text" name="address" placeholder="Domicilio" />
+                </p>
+                <h3>Perfil del usuario</h3>
+                <div class="user-profile">
+                    <input type="radio" name="profile" value="comprador" />
+                    Comprador
+                    <input type="radio" name="profile" value="vendedor" />
+                    Vendedor
+                </div>
+                <h3>Intereses</h3>
+                <div class="user-interests">
+                    <label
+                        ><input
+                            type="checkbox"
+                            name="interests"
+                            value="electro"
+                        />
+                        Electro</label
+                    >
+                    <label
+                        ><input type="checkbox" name="interests" value="moda" />
+                        Moda</label
+                    >
+                    <label
+                        ><input
+                            type="checkbox"
+                            name="interests"
+                            value="hogar"
+                        />
+                        Hogar</label
+                    >
+                    <label
+                        ><input
+                            type="checkbox"
+                            name="interests"
+                            value="jugueteria"
+                        />
+                        Juguetería</label
+                    >
+                    <label
+                        ><input
+                            type="checkbox"
+                            name="interests"
+                            value="vida-sana"
+                        />
+                        Vida sana</label
+                    >
+                </div>
+                <h3>Elegí tu foto de usuario</h3>
+                <input type="file" name="avatar" />
+                <label for="pass" class="hidden">Ingresa tu contraseña</label>
+                <p>
+                    <input
+                        type="password"
+                        name="pass"
+                        placeholder="Elegí tu contraseña"
+                    />
+                </p>
+                <label for="pass_confirm" class="hidden"
+                    >Confirma tu contraseña</label
+                >
+                <p>
+                    <input
+                        type="password"
+                        name="pass_confirm"
+                        placeholder="Confirmá tu contraseña"
+                    />
+                </p>
+                <button class="submit" type="submit">Enviar</button
+                ><button class="reset" type="reset">Reset</button>
+            </form>
+        </main>
+
+        <footer><%- include("partials/footer.ejs") %></footer>
+    </body>
+</html>

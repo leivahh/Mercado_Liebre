@@ -1,0 +1,18 @@
+<article class="bg-white">
+    <a href="/products/detail/<%= product.id %>/<%= product.category %>">
+        <img
+            src="/images/products/<%- product.image %>"
+            alt="Cafetera Moulinex"
+        />
+    </a>
+    <div class="product-info">
+        <div class="align-right">
+            <i class="fas fa-truck ml-verde"></i>
+        </div>
+        <p class="price">$<%- product.price %></p>
+        <% if (product.discount > 0) { %>
+        <p class="discount"><%- product.discount %>% Off</p>
+        <% }%>
+        <h3 class="description"><%- product.name %></h3>
+    </div>
+</article>
